@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F0F4F8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1d72b8;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        main {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1d72b8;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #155a8a;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #333;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #1d72b8;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Sistema de Conversação com IA</h1>
+    </header>
+
+    <main>
+        <p>Este sistema permite interagir com uma Inteligência Artificial com RAG (Rastreamento de Artefatos Generativos).</p>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                <li><a href="{{ url_for('chat.chat') }}">Chat</a></li>
+                <li><a href="{{ url_for('home.index') }}">Página Inicial</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Projeto Integrador IFRN | AVALIAÇÃO DE PERFORMANCE ENTRE MODELOS DE IA GENERATIVA COM RAG EM TAREFAS DE PERGUNTAS E RESPOSTAS
+    </footer>
+
+</body>
+</html>
